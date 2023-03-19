@@ -484,8 +484,20 @@ namespace GCS
 		public string Url, Content, ContentType = "text/html";
 		public byte[] RawContent = null;
 		
-		public HttpResponse(){}
-		public HttpResponse(int code, string content){ ReturnCode = code; Content = content; }
+		public HttpResponse()
+		{
+		    //assuming  browser has enabled cache
+			Header["Expires"] = DateTime.UtcNow.Add(TimeSpan.FromMinutes(60*4)).ToString("R");
+			Header["Cache-Control"] = "max-age=14400"; //four hours
+		}
+
+		public HttpResponse(int code, string content)
+		{
+			Header["Expires"] = DateTime.UtcNow.Add(TimeSpan.FromMinutes(60 * 4)).ToString("R");
+			Header["Cache-Control"] = "max-age=14400"; //four hours
+			ReturnCode = code; 
+			Content = content; 
+		}
 		
 		public void MakeRedirect(string newurl)
 		{
