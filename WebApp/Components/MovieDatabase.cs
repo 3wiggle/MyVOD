@@ -88,7 +88,7 @@ namespace GCS
             {
                 StringBuilder sb = new StringBuilder();
                 foreach (Genre g in Genres)
-                    sb.Append(string.Format(VODMovieWebSite.Properties.Resource1.GenreTemplate, g.Name) + Environment.NewLine);
+                    sb.Append(string.Format(WebApp.Resource.GenreTemplate, g.Name) + Environment.NewLine);
                 return sb.ToString();
             }
         }
@@ -99,7 +99,7 @@ namespace GCS
             {
                 StringBuilder sb = new StringBuilder();
                 foreach (int y in Program.MovieDB.Years)
-                    sb.Append(string.Format(VODMovieWebSite.Properties.Resource1.YearTemplate, y) + Environment.NewLine);
+                    sb.Append(string.Format(WebApp.Resource.YearTemplate, y) + Environment.NewLine);
                 return sb.ToString();
             }
         }
@@ -114,7 +114,7 @@ namespace GCS
                 {
                  
                         sb.Append(
-                          string.Format(VODMovieWebSite.Properties.Resource1.MovieTemplate, m.ID, m.CoverimageKey, m.Title)
+                          string.Format(WebApp.Resource.MovieTemplate, m.ID, m.CoverimageKey, m.Title)
                        );
                     
                 }
@@ -145,7 +145,7 @@ namespace GCS
                 {
                    if (m.Genres.Contains(CurrentGenre))
                        sb.Append(
-                               string.Format(VODMovieWebSite.Properties.Resource1.MovieTemplate, m.ID, m.CoverimageKey, m.Title));
+                               string.Format(WebApp.Resource.MovieTemplate, m.ID, m.CoverimageKey, m.Title));
                     
                 }
                 return sb.ToString();
@@ -159,7 +159,7 @@ namespace GCS
 
         private string yearSection(int year)
         {
-            return VODMovieWebSite.Properties.Resource1.YearSectionTemplate.
+            return WebApp.Resource.YearSectionTemplate.
                 Replace("#YEAR#", year.ToString()).
                 Replace("#YEAR_SECTION#", MoviesForYearSection(year));
         }
@@ -170,7 +170,7 @@ namespace GCS
             var movies = from Movie m in Program.MovieDB.Movies where m.Year == year select m;
             foreach (Movie m in movies)
                 sb.Append(
-                    string.Format(VODMovieWebSite.Properties.Resource1.MovieTemplate, 
+                    string.Format(WebApp.Resource.MovieTemplate, 
                                         m.ID, m.CoverimageKey,m.Title)
                          );
 
@@ -619,7 +619,7 @@ namespace GCS
                     return null;
 
                 StringBuilder sb = new StringBuilder();
-                string mask = VODMovieWebSite.Properties.Resource1.ActorTemplate;
+                string mask = WebApp.Resource.ActorTemplate;
                 foreach(int i in ActorKeys)
                 {
                     if (i < 0 || i >= Program.MovieDB.Actors.Count())
@@ -644,7 +644,7 @@ namespace GCS
         {
             get 
             {
-                return string.Format(VODMovieWebSite.Properties.Resource1.TrailerTemplate, IMDB, Title);
+                return string.Format(WebApp.Resource.TrailerTemplate, IMDB, Title);
             }
         }
 

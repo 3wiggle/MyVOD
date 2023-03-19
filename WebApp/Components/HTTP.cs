@@ -146,7 +146,7 @@ namespace GCS
 				data.req.QueryString = "";
 			}
 
-			Console.WriteLine("Received From  "+data.req.From.ToString()+" "+data.req.Page);
+			Console.WriteLine(string.Format("{0}:{01} {2} | {3} ",DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString(),data.req.From.ToString(),data.req.Page));
 			
 			if(data.req.Page.IndexOf("..") >= 0) 
 			{ 
