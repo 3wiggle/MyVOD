@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Random Image Slideshow</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body style="background-color:black">
+    <script>
+        function loadRandomImage()
+        {
+
+          var num = Math.floor(Math.random() * #TOTAL#) + 1; 
+		  while(num == 0)
+		     num = Math.floor(Math.random() * #TOTAL#) + 1;
+          var paddedNum = num.toString().padStart(6, '0'); // pad the number with zeros up to six digits
+          document.getElementById("slideshow").src = imgUrl;
+           
+          var imgUrl = "Backdrops/" + paddedNum + ".jpg"; // change "images/" to the directory where your image files are located and ".jpg" to the file extension of your images
+          document.getElementById("slideshow").src = imgUrl;
+          setTimeout(loadRandomImage, 5000); // change 5000 to the number of milliseconds you want each image to be displayed
+        }
+
+        document.addEventListener("mousemove", function ()
+        {
+             window.location.href = "index.htm";
+        });
+
+        document.addEventListener("keypress", function ()
+        {
+          window.location.href = "index.htm";
+        });
+
+    window.onload = function ()
+    {
+      loadRandomImage();
+    }
+    </script>
+    <img id="slideshow" />
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="icon" href="/gif/favicon.ico" />
+	<link href="gif/style.css" rel="stylesheet" type="text/css" />
+	<script src="gif/jquery-3.1.1.min.js"></script>
+	<script src="gif/smoothscroll.js" type="text/javascript"></script>
+	<script src="gif/strings.js" type="text/javascript"></script>
+	<script src="gif/myscript.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		function back() { window.history.back(); }
+	</script>
+	<title>#PAGE_TITLE#</title>
+</head>
+<body>
+	<div id="wrapper">
+		<main class="shadow"> 
+			<nav class="subnav">		
+				<a href="javascript:back()">BMDB</a>
+				<a href="#LINK_CURRENT_MOVIE#">#TITLE#</a>
+			</nav>
+			<article id="#MOVIE_ID#">
+				<h2>#TITLE# #YEAR#</h2>
+				<div id="cover">
+					<a id="coverVodLink" alt="Click To View #TITLE#" href="#VOD_LINK#">
+					  <img id="coverLink" class="shadow" src="covers/#COVER#" alt="cover #TITLE#" />
+					</a>
+					<br />
+					<br />
+					#IMDB_LINK# &nbsp;&nbsp;
+					<a id="vodLink" alt="Click To View #TITLE#" href="#VOD_LINK#"> <img id="rtspLink" class="imdblink" src="gif/rtsp.png" height="28" alt="Click To View #TITLE#" align="bottom" /></a>
+				</div>
+				<div id="details">
+					<p><b>Country:</b> #COUNTRY#, #DURATION#</p>
+					<p><b>AKA:</b> #ALTERNATIVE_TITLE#</p>
+					<p><b>Director:</b> #DIRECTOR#</p>
+					<p><b>Genres:</b> #GENRES#</p>
+					<p style="text-align:justify"><b>Plot:</b> #PLOTOUTLINE#</p>	
+				</div>
+				<b>Cast</b><br>
+					<p>
+					 <ul>#CAST_LIST#</ul>
+					</p>
+				<div id="details2">
+					<p><b>Location: </b> #LOCATION#<br/>
+				</div>
+			</article>
+			<nav class="subnav"><a href="#wrapper">&nbsp;&nbsp;Top&nbsp;&nbsp;</a></nav>  	
+		</main>	
+		<div id="footer">
+			<br /><br />
+			#COPYRIGHT#
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+Server.DLL is a Socket Wrapper I adopted long ago and still use today for clean TCP/IP uses...
+It was acquired from Here:
+
+https://www.codeproject.com/Articles/12286/Simple-Client-server-Interactions-using-C
+
+Lack of NuGet packaging and class dependencies cause our intended application to bloat greatly...
+Therefore, I have included the binary DLL
+The dependency is upon Windows.Forms.Control for threading purposes... 
+And as such is not suited for direct inclusion and compiling with our DeskTop Console app here.
+
+
+Socket.cs   the source file... 
+Socket.html the documentation file...
+Socket.dll  the compiled assembly (forgot the .net version but herein we are targeting .Net Framework 4.6)
+
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="description" content=""/>
+	<meta name="keywords" content=""/>
+
+	<link href="./gif/style.css" rel="stylesheet" type="text/css" />	
+	<script src="./gif/smoothscroll.js" type="text/javascript"></script>
+	<script src="./gif/strings.js" type="text/javascript"></script>
+	
+	<script type="text/javascript">
+		function back() { 
+			window.history.back();
+		}
+		
+		function zeigeJahre() {	
+			if(document.getElementById)
+				if (document.getElementById('yearnav').style.display == 'block')
+					document.getElementById('yearnav').style.display = 'none';
+				else
+					document.getElementById('yearnav').style.display = 'block';	
+		}
+
+	</script>
+	
+    <title>BMDB Years</title>
+</head>
+
+<body>
+	<div id="wrapper">
+		<main class="shadow"> 
+			
+			<nav class="subnav">		
+				<a href="index.htm">BMDB</a>
+				<a href="javascript:zeigeJahre()">Years</a>
+			</nav>
+			<hr />
+			<nav id="yearnav">		
+				#YEARS_MENU#
+				<hr/>
+			</nav>			
+  
+<!-- Article ----------------------------------------------------------------->	
+			#YEAR_SECTIONS#
+			
+			<nav class="subnav"><a href="#wrapper">&nbsp;&nbsp;Top&nbsp;&nbsp;</a></nav>  	
+		</main>	
+
+		<div id="footer">
+ 		 
+			<br/><br/>
+			#COPYRIGHT_TRANSLATION#
+		</div>
+	</div>
+	<!-- created by LeChuck (lechuck@icyweb.de) 10.12.2018 -->	
+</body>
+</html>

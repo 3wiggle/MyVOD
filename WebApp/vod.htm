@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+    <meta charset='utf-8' />
+    <link rel="icon" type="image/ico" href="gif/favicon.ico" />
+    <script src='#PLAYERLINK#'></script>
+    <title>#PAGE_TITLE#</title>
+</head>
+<body style='margin: 0; background-color: black' Height="100%">
+    <div class='mistvideo' id='myPlayer'></div>
+
+    <script>
+        elem = document.getElementById("myPlayer")
+        if (elem.requestFullscreen) { elem.requestFullscreen(); }
+        else if (element.mozRequestFullScreen) { element.mozRequestFullScreen(); }
+        else if (elem.webkitRequestFullscreen) { /* Safari */ elem.webkitRequestFullscreen(); }
+        else if (elem.msRequestFullscreen) { /* IE11 */  elem.msRequestFullscreen(); }
+
+        mistPlay("#SOURCENAME#", { target: document.getElementById("myPlayer"), autoplay: true, controls: "stock", fillSpace: true, poster: "#POSTERLINK#" });
+    </script>
+</body>
+</html>
+ 
